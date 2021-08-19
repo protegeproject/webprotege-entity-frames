@@ -2,6 +2,7 @@ package edu.stanford.protege.webprotege.frame;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import edu.stanford.protege.webprotege.common.ProjectId;
 import edu.stanford.protege.webprotege.common.Response;
 
 /**
@@ -12,6 +13,6 @@ import edu.stanford.protege.webprotege.common.Response;
 
 
 @JsonTypeName("GetObjectPropertyFrame")
-public record GetObjectPropertyFrameResult(@JsonProperty("frame") ObjectPropertyFrame frame) implements Response {
+public record GetObjectPropertyFrameResult(ProjectId projectId, @JsonProperty("frame") ObjectPropertyFrame frame) implements Response {
 
 }

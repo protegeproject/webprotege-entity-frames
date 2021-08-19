@@ -32,6 +32,11 @@
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
+			<groupId>edu.stanford.protege</groupId>
+			<artifactId>webprotege-owlapi-jackson</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>com.google.auto.value</groupId>
 			<artifactId>auto-value</artifactId>
 			<version>1.8.2</version>
