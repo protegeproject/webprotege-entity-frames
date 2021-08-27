@@ -19,8 +19,10 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
 public record GetNamedIndividualFrameAction(@JsonProperty("projectId") ProjectId projectId,
                                             @JsonProperty("subject") OWLNamedIndividual subject) implements Request<GetNamedIndividualFrameResult> {
 
+    public static final String CHANNEL = "webprotege.frames.GetNamedIndividualFrame";
+
     @Override
     public String getChannel() {
-        return "frames.GetNamedIndividualFrame";
+        return CHANNEL;
     }
 }

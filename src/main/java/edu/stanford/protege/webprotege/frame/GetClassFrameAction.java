@@ -18,8 +18,10 @@ import org.semanticweb.owlapi.model.OWLClass;
 public record GetClassFrameAction(@JsonProperty("projectId") ProjectId projectId,
                                   @JsonProperty("subject") OWLClass subject) implements Request<GetClassFrameResult> {
 
+    public static final String CHANNEL = "webprotege.frames.GetClassFrame";
+
     @Override
     public String getChannel() {
-        return "frames.GetClassFrame";
+        return CHANNEL;
     }
 }

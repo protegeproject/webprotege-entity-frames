@@ -18,8 +18,10 @@ public record UpdateClassFrameAction(@JsonProperty("projectId") ProjectId projec
                                      @JsonProperty("from") PlainClassFrame from,
                                      @JsonProperty("to") PlainClassFrame to) implements Request<UpdateClassFrameResult> {
 
+    public static final String CHANNEL = "webprotege.frames.UpdateClassFrame";
+
     @Override
     public String getChannel() {
-        return "frames.UpdateClassFrame";
+        return CHANNEL;
     }
 }

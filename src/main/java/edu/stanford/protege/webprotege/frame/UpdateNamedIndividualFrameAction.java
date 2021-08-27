@@ -18,8 +18,10 @@ public record UpdateNamedIndividualFrameAction(@JsonProperty("projectId") Projec
                                                @JsonProperty("from") PlainNamedIndividualFrame from,
                                                @JsonProperty("to") PlainNamedIndividualFrame to) implements Request<UpdateNamedIndividualFrameResult> {
 
+    public static final String CHANNEL = "webprotege.frames.UpdateNamedIndividualFrame";
+
     @Override
     public String getChannel() {
-        return "frames.UpdateNamedIndividualFrame";
+        return CHANNEL;
     }
 }

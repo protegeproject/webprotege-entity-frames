@@ -17,6 +17,6 @@ public record DatatypeFrameChangedEvent(ProjectId projectId,
 
     @Override
     public String getChannel() {
-        return "frames.events.DatatypeFrameChanged";
+        return "webprotege.frames.events.DatatypeFrameChanged";
     }
 }

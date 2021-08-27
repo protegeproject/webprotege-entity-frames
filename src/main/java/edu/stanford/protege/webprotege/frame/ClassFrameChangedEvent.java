@@ -17,6 +17,6 @@ public record ClassFrameChangedEvent(ProjectId projectId,
 
     @Override
     public String getChannel() {
-        return "frames.events.ClassFrameChanged";
+        return "webprotege.frames.events.ClassFrameChanged";
     }
 }

@@ -18,8 +18,10 @@ import org.semanticweb.owlapi.model.OWLDataProperty;
 public record GetDataPropertyFrameAction(@JsonProperty("projectId") ProjectId projectId,
                                          @JsonProperty("subject") OWLDataProperty subject) implements Request<GetDataPropertyFrameResult> {
 
+    public static final String CHANNEL = "webprotege.frames.GetDataPropertyFrame";
+
     @Override
     public String getChannel() {
-        return "frames.GetDataPropertyFrame";
+        return CHANNEL;
     }
 }

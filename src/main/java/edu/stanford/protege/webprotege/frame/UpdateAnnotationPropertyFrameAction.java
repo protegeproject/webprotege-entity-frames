@@ -18,8 +18,10 @@ public record UpdateAnnotationPropertyFrameAction(@JsonProperty("projectId") Pro
                                                   @JsonProperty("from") PlainAnnotationPropertyFrame from,
                                                   @JsonProperty("to") PlainAnnotationPropertyFrame to) implements Request<UpdateAnnotationPropertyFrameResult> {
 
+    public static final String CHANNEL = "webprotege.frames.UpdateAnnotationPropertyFrame";
+
     @Override
     public String getChannel() {
-        return "frames.UpdateAnnotationPropertyFrame";
+        return CHANNEL;
     }
 }

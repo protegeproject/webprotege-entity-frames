@@ -18,8 +18,10 @@ public record UpdateDataPropertyFrameAction(@JsonProperty("projectId") ProjectId
                                             @JsonProperty("from") PlainDataPropertyFrame from,
                                             @JsonProperty("to") PlainDataPropertyFrame to) implements Request<UpdateDataPropertyFrameResult> {
 
+    public static final String CHANNEL = "webprotege.frames.UpdateDataPropertyFrame";
+
     @Override
     public String getChannel() {
-        return "frames.UpdateDataPropertyFrame";
+        return CHANNEL;
     }
 }

@@ -16,6 +16,6 @@ public record AnnotationPropertyFrameChangedEvent(ProjectId projectId,
 
     @Override
     public String getChannel() {
-        return "frames.events.AnnotationPropertyFrameChanged";
+        return "webprotege.frames.events.AnnotationPropertyFrameChanged";
     }
 }

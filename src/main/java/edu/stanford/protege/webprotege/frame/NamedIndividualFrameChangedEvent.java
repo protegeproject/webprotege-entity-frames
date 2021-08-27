@@ -17,6 +17,6 @@ public record NamedIndividualFrameChangedEvent(ProjectId projectId,
 
     @Override
     public String getChannel() {
-        return "frames.events.NamedIndividualFrameChanged";
+        return "webprotege.frames.events.NamedIndividualFrameChanged";
     }
 }

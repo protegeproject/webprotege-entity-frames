@@ -10,8 +10,10 @@ import edu.stanford.protege.webprotege.common.Request;
  */
 public record GetOntologyFramesAction(ProjectId projectId) implements Request<GetOntologyFramesResult> {
 
+    public static final String CHANNEL = "webprotege.frames.GetOntologyFrames";
+
     @Override
     public String getChannel() {
-        return "frames.GetOntologyFrames";
+        return CHANNEL;
     }
 }

@@ -18,8 +18,10 @@ import org.semanticweb.owlapi.model.OWLAnnotationProperty;
 public record GetAnnotationPropertyFrameAction(@JsonProperty("subject") OWLAnnotationProperty subject,
                                                @JsonProperty("projectId") ProjectId projectId) implements Request<GetAnnotationPropertyFrameResult> {
 
+    public static final String CHANNEL = "webprotege.frames.GetAnnotationPropertyFrame";
+
     @Override
     public String getChannel() {
-        return "frames.GetAnnotationPropertyFrame";
+        return CHANNEL;
     }
 }
