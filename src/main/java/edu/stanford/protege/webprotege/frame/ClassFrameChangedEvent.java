@@ -1,6 +1,7 @@
 package edu.stanford.protege.webprotege.frame;
 
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import edu.stanford.protege.webprotege.common.ProjectId;
 import edu.stanford.protege.webprotege.common.UserId;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -11,12 +12,15 @@ import org.semanticweb.owlapi.model.OWLClass;
  * Bio-Medical Informatics Research Group<br>
  * Date: 18/12/2012
  */
+@JsonTypeName("ClassFrameChangedEvent")
 public record ClassFrameChangedEvent(ProjectId projectId,
                                      UserId userId,
                                      OWLClass entity) implements EntityFrameChangedEvent<OWLClass> {
 
+    public static final String CHANNEL = "webprotege.frames.events.ClassFrameChanged";
+
     @Override
     public String getChannel() {
-        return "webprotege.frames.events.ClassFrameChanged";
+        return CHANNEL;
     }
 }
