@@ -18,8 +18,10 @@ public record CheckManchesterSyntaxFrameAction(ProjectId projectId,
                                                OWLEntity subject,
                                                String from,
                                                String to,
-                                               ImmutableSet<OWLEntityData> freshEntities)implements Request<CheckManchesterSyntaxFrameResult> {
+                                               ImmutableSet<OWLEntityData> freshEntities)implements Request<CheckManchesterSyntaxFrameResult>, HasFreshEntities {
 
+
+    public static final String CHANNEL = "webprotege.frames.CheckManchesterSyntax";
 
     @JsonCreator
     public static CheckManchesterSyntaxFrameAction create(@JsonProperty("projectId") ProjectId projectId,
@@ -32,6 +34,6 @@ public record CheckManchesterSyntaxFrameAction(ProjectId projectId,
 
     @Override
     public String getChannel() {
-        return "frames.CheckManchesterSyntax";
+        return CHANNEL;
     }
 }

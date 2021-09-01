@@ -3,6 +3,7 @@ package edu.stanford.protege.webprotege.frame;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import edu.stanford.protege.webprotege.common.ProjectId;
+import edu.stanford.protege.webprotege.common.ProjectRequest;
 import edu.stanford.protege.webprotege.common.Request;
 import org.semanticweb.owlapi.model.OWLAnnotationProperty;
 
@@ -16,7 +17,7 @@ import org.semanticweb.owlapi.model.OWLAnnotationProperty;
 
 @JsonTypeName("GetAnnotationPropertyFrame")
 public record GetAnnotationPropertyFrameAction(@JsonProperty("subject") OWLAnnotationProperty subject,
-                                               @JsonProperty("projectId") ProjectId projectId) implements Request<GetAnnotationPropertyFrameResult> {
+                                               @JsonProperty("projectId") ProjectId projectId) implements ProjectRequest<GetAnnotationPropertyFrameResult> {
 
     public static final String CHANNEL = "webprotege.frames.GetAnnotationPropertyFrame";
 

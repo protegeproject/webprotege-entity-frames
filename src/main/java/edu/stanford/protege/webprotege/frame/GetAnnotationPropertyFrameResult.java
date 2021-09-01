@@ -11,15 +11,12 @@ import edu.stanford.protege.webprotege.common.Response;
  * Stanford Center for Biomedical Informatics Research
  * 28 Jul 16
  */
-@AutoValue
-
 @JsonTypeName("GetAnnotationPropertyFrame")
-public abstract class GetAnnotationPropertyFrameResult implements Response {
+public record GetAnnotationPropertyFrameResult(AnnotationPropertyFrame frame) implements Response {
 
     @JsonCreator
     public static GetAnnotationPropertyFrameResult create(@JsonProperty("frame") AnnotationPropertyFrame frame) {
-        return new AutoValue_GetAnnotationPropertyFrameResult(frame);
+        return new GetAnnotationPropertyFrameResult(frame);
     }
 
-    public abstract AnnotationPropertyFrame getFrame();
 }

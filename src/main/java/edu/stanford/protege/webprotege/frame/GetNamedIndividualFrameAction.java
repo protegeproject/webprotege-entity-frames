@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import edu.stanford.protege.webprotege.common.ProjectId;
+import edu.stanford.protege.webprotege.common.ProjectRequest;
 import edu.stanford.protege.webprotege.common.Request;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 
@@ -17,7 +18,7 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
 
 @JsonTypeName("GetNamedIndividualFrame")
 public record GetNamedIndividualFrameAction(@JsonProperty("projectId") ProjectId projectId,
-                                            @JsonProperty("subject") OWLNamedIndividual subject) implements Request<GetNamedIndividualFrameResult> {
+                                            @JsonProperty("subject") OWLNamedIndividual subject) implements ProjectRequest<GetNamedIndividualFrameResult> {
 
     public static final String CHANNEL = "webprotege.frames.GetNamedIndividualFrame";
 
