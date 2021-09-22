@@ -24,7 +24,6 @@ import static com.google.common.collect.ImmutableSet.toImmutableSet;
  * </p>
  */
 @AutoValue
-
 @JsonTypeName("ClassFrame")
 public abstract class ClassFrame implements EntityFrame<OWLClassData>, Serializable, HasPropertyValueList, HasPropertyValues, HasAnnotationPropertyValues, HasLogicalPropertyValues {
 

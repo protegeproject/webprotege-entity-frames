@@ -2,7 +2,7 @@ package edu.stanford.protege.webprotege.frame;
 
 import com.google.common.collect.ImmutableSet;
 
-import edu.stanford.protege.webprotege.jackson.WebprotegeOwlApiJacksonApplication;
+import edu.stanford.protege.webprotege.jackson.WebProtegeJacksonApplication;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import static edu.stanford.protege.webprotege.frame.TestUtils.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @JsonTest
-@Import(WebprotegeOwlApiJacksonApplication.class)
+@Import(WebProtegeJacksonApplication.class)
 public class PlainIndividualFrame_Serialization_TestCase {
 
     @Autowired

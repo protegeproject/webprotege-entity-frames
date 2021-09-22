@@ -2,7 +2,7 @@ package edu.stanford.protege.webprotege.frame;
 
 import com.google.common.collect.Lists;
 
-import edu.stanford.protege.webprotege.jackson.WebprotegeOwlApiJacksonApplication;
+import edu.stanford.protege.webprotege.jackson.WebProtegeJacksonApplication;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * 15/01/15
  */
 @JsonTest
-@Import(WebprotegeOwlApiJacksonApplication.class)
+@Import(WebProtegeJacksonApplication.class)
 public class PropertyValueList_TestCase {
 
 

@@ -2,7 +2,7 @@ package edu.stanford.protege.webprotege.frame;
 
 import com.google.common.collect.ImmutableSet;
 import edu.stanford.protege.webprotege.common.WebProtegeCommonConfiguration;
-import edu.stanford.protege.webprotege.jackson.WebprotegeOwlApiJacksonApplication;
+import edu.stanford.protege.webprotege.jackson.WebProtegeJacksonApplication;
 import org.junit.jupiter.api.Test;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * 2021-04-08
  */
 @JsonTest
-@Import({WebprotegeOwlApiJacksonApplication.class, WebProtegeCommonConfiguration.class})
+@Import({WebProtegeJacksonApplication.class, WebProtegeCommonConfiguration.class})
 public class ObjectPropertyFrame_Serialization_TestCase {
 
 
@@ -41,6 +41,7 @@ public class ObjectPropertyFrame_Serialization_TestCase {
                                                     ImmutableSet.of(),
                                                     ImmutableSet.of());
         var json = tester.write(frame);
+        System.out.println(json.getJson());
         assertThat(json).hasJsonPath("subject");
         assertThat(json).hasJsonPath("propertyValues");
         assertThat(json).hasJsonPath("domains");
@@ -52,13 +53,10 @@ public class ObjectPropertyFrame_Serialization_TestCase {
     void shouldDeserializeFrame() throws IOException {
         var json = """
                 {
-                    "type" : "ObjectPropertyFrame",
+                    "@type" : "ObjectPropertyFrame",
                     "subject" : {
-                        "type" : "OWLObjectPropertyData",
-                        "entity" : {
-                            "iri" : "http://www.example.org/x",
-                            "type" : "owl:ObjectProperty"
-                        },
+                        "@type" : "ObjectPropertyData",
+                        "iri"   : "http://www.example.org/x",
                         "shortForms" : []
                     },
                     "propertyValues" : [],

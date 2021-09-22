@@ -3,7 +3,7 @@ package edu.stanford.protege.webprotege.frame;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import edu.stanford.protege.webprotege.entity.OWLObjectPropertyData;
-import edu.stanford.protege.webprotege.jackson.WebprotegeOwlApiJacksonApplication;
+import edu.stanford.protege.webprotege.jackson.WebProtegeJacksonApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
@@ -24,7 +24,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * 2021-04-07
  */
 @JsonTest
-@Import(WebprotegeOwlApiJacksonApplication.class)
+@Import(WebProtegeJacksonApplication.class)
 public class GetObjectPropertyFrame_Serialization_TestCase {
 
     @Autowired

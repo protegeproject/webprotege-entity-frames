@@ -1,7 +1,7 @@
 package edu.stanford.protege.webprotege.frame;
 
 import com.google.common.collect.ImmutableSet;
-import edu.stanford.protege.webprotege.jackson.WebprotegeOwlApiJacksonApplication;
+import edu.stanford.protege.webprotege.jackson.WebProtegeJacksonApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.context.annotation.Import;
@@ -19,7 +19,7 @@ import static edu.stanford.protege.webprotege.frame.TestUtils.mockProjectId;
  * 2021-04-07
  */
 @JsonTest
-@Import(WebprotegeOwlApiJacksonApplication.class)
+@Import(WebProtegeJacksonApplication.class)
 public class UpdateClassFrame_Serialization_TestCase {
 
     @Test

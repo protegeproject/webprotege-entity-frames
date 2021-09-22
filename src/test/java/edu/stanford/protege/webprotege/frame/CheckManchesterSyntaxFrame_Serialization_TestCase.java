@@ -3,7 +3,7 @@ package edu.stanford.protege.webprotege.frame;
 import com.google.common.collect.ImmutableSet;
 
 import edu.stanford.protege.webprotege.common.ProjectId;
-import edu.stanford.protege.webprotege.jackson.WebprotegeOwlApiJacksonApplication;
+import edu.stanford.protege.webprotege.jackson.WebProtegeJacksonApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.context.annotation.Import;
@@ -17,7 +17,7 @@ import java.io.IOException;
  * 2021-04-06
  */
 @JsonTest
-@Import(WebprotegeOwlApiJacksonApplication.class)
+@Import(WebProtegeJacksonApplication.class)
 public class CheckManchesterSyntaxFrame_Serialization_TestCase {
 
     @Test

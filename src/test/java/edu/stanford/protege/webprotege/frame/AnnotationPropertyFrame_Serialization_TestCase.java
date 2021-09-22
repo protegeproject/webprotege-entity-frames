@@ -2,7 +2,7 @@ package edu.stanford.protege.webprotege.frame;
 
 import com.google.common.collect.ImmutableSet;
 import edu.stanford.protege.webprotege.common.WebProtegeCommonConfiguration;
-import edu.stanford.protege.webprotege.jackson.WebprotegeOwlApiJacksonApplication;
+import edu.stanford.protege.webprotege.jackson.WebProtegeJacksonApplication;
 import org.junit.jupiter.api.Test;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * 2021-04-08
  */
 @JsonTest
-@Import({WebprotegeOwlApiJacksonApplication.class, WebProtegeCommonConfiguration.class})
+@Import({WebProtegeJacksonApplication.class, WebProtegeCommonConfiguration.class})
 public class AnnotationPropertyFrame_Serialization_TestCase {
 
     @Autowired
@@ -48,13 +48,10 @@ public class AnnotationPropertyFrame_Serialization_TestCase {
     void shouldDeserializeFrame() throws IOException {
         var json = """
                 {
-                    "type" : "AnnotationPropertyFrame",
+                    "@type" : "AnnotationPropertyFrame",
                     "subject" : {
-                        "type" : "OWLAnnotationPropertyData",
-                        "entity" : {
-                            "iri" : "http://www.example.org/x",
-                            "type" : "owl:AnnotationProperty"
-                        },
+                        "@type" : "AnnotationPropertyData",
+                        "iri"   : "http://www.example.org/x",
                         "shortForms" : []
                     },
                     "propertyValues" : [],

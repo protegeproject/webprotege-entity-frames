@@ -14,7 +14,6 @@ import edu.stanford.protege.webprotege.entity.OWLEntityData;
  *     A marker interface for term frames.
  * </p>
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property="type")
 @JsonSubTypes({
         @Type(ClassFrame.class),
         @Type(ObjectPropertyFrame.class),
