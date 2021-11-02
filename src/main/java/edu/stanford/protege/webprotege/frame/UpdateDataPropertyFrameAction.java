@@ -14,7 +14,7 @@ import edu.stanford.protege.webprotege.common.Request;
  */
 
 
-@JsonTypeName("UpdateDataPropertyFrame")
+@JsonTypeName("webprotege.frames.UpdateDataPropertyFrame")
 public record UpdateDataPropertyFrameAction(@JsonProperty("projectId") ProjectId projectId,
                                             @JsonProperty("from") PlainDataPropertyFrame from,
                                             @JsonProperty("to") PlainDataPropertyFrame to) implements ProjectRequest<UpdateDataPropertyFrameResult>, UpdateFrame {

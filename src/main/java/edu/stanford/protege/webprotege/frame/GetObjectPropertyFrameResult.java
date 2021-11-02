@@ -12,7 +12,7 @@ import edu.stanford.protege.webprotege.common.Response;
  */
 
 
-@JsonTypeName("GetObjectPropertyFrame")
+@JsonTypeName("webprotege.frames.GetObjectPropertyFrame")
 public record GetObjectPropertyFrameResult(ProjectId projectId, @JsonProperty("frame") ObjectPropertyFrame frame) implements Response {
 
 }

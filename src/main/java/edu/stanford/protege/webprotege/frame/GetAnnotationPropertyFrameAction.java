@@ -15,7 +15,7 @@ import org.semanticweb.owlapi.model.OWLAnnotationProperty;
  */
 
 
-@JsonTypeName("GetAnnotationPropertyFrame")
+@JsonTypeName("webprotege.frames.GetAnnotationPropertyFrame")
 public record GetAnnotationPropertyFrameAction(@JsonProperty("subject") OWLAnnotationProperty subject,
                                                @JsonProperty("projectId") ProjectId projectId) implements ProjectRequest<GetAnnotationPropertyFrameResult> {
 

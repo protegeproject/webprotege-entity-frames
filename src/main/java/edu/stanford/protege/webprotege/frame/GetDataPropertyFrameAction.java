@@ -15,7 +15,7 @@ import org.semanticweb.owlapi.model.OWLDataProperty;
  */
 
 
-@JsonTypeName("GetDataPropertyFrame")
+@JsonTypeName("webprotege.frames.GetDataPropertyFrame")
 public record GetDataPropertyFrameAction(@JsonProperty("projectId") ProjectId projectId,
                                          @JsonProperty("subject") OWLDataProperty subject) implements ProjectRequest<GetDataPropertyFrameResult> {
 

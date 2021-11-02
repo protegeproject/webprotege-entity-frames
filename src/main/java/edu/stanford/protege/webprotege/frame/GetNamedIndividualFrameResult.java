@@ -10,7 +10,7 @@ import edu.stanford.protege.webprotege.common.Response;
  */
 
 
-@JsonTypeName("GetNamedIndividualFrame")
+@JsonTypeName("webprotege.frames.GetNamedIndividualFrame")
 public record GetNamedIndividualFrameResult(NamedIndividualFrame frame) implements Response {
 
 }

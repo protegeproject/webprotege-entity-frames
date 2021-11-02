@@ -11,7 +11,7 @@ import edu.stanford.protege.webprotege.common.Response;
  * Stanford Center for Biomedical Informatics Research
  * 28 Jul 16
  */
-@JsonTypeName("GetAnnotationPropertyFrame")
+@JsonTypeName("webprotege.frames.GetAnnotationPropertyFrame")
 public record GetAnnotationPropertyFrameResult(AnnotationPropertyFrame frame) implements Response {
 
     @JsonCreator

@@ -10,7 +10,7 @@ import edu.stanford.protege.webprotege.common.Response;
  */
 
 
-@JsonTypeName("GetDataPropertyFrame")
+@JsonTypeName("webprotege.frames.GetDataPropertyFrame")
 public record GetDataPropertyFrameResult(DataPropertyFrame frame) implements Response {
 
 }

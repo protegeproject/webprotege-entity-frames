@@ -14,7 +14,7 @@ import edu.stanford.protege.webprotege.common.Request;
  */
 
 
-@JsonTypeName("UpdateAnnotationPropertyFrame")
+@JsonTypeName("webprotege.frames.UpdateAnnotationPropertyFrame")
 public record UpdateAnnotationPropertyFrameAction(@JsonProperty("projectId") ProjectId projectId,
                                                   @JsonProperty("from") PlainAnnotationPropertyFrame from,
                                                   @JsonProperty("to") PlainAnnotationPropertyFrame to) implements ProjectRequest<UpdateAnnotationPropertyFrameResult>, UpdateFrame {

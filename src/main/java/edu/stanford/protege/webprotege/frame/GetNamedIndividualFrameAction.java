@@ -16,7 +16,7 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
  */
 
 
-@JsonTypeName("GetNamedIndividualFrame")
+@JsonTypeName("webprotege.frames.GetNamedIndividualFrame")
 public record GetNamedIndividualFrameAction(@JsonProperty("projectId") ProjectId projectId,
                                             @JsonProperty("subject") OWLNamedIndividual subject) implements ProjectRequest<GetNamedIndividualFrameResult> {
 

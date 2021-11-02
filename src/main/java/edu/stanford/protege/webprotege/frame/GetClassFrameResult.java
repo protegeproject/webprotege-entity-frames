@@ -10,6 +10,6 @@ import edu.stanford.protege.webprotege.common.Response;
  * 28 Jul 16
  */
 
-@JsonTypeName("GetClassFrame")
+@JsonTypeName("webprotege.frames.GetClassFrame")
 public record GetClassFrameResult(@JsonProperty("frame") ClassFrame classFrame) implements Response {
 }

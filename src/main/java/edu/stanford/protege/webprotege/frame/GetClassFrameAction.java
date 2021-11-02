@@ -13,7 +13,7 @@ import org.semanticweb.owlapi.model.OWLClass;
  * Bio-Medical Informatics Research Group<br>
  * Date: 20/02/2013
  */
-@JsonTypeName("GetClassFrame")
+@JsonTypeName("webprotege.frames.GetClassFrame")
 public record GetClassFrameAction(@JsonProperty("projectId") ProjectId projectId,
                                   @JsonProperty("subject") OWLClass subject) implements ProjectRequest<GetClassFrameResult> {
 

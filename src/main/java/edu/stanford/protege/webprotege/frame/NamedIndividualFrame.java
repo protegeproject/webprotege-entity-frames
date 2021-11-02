@@ -1,6 +1,7 @@
 package edu.stanford.protege.webprotege.frame;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.google.auto.value.AutoValue;
@@ -59,24 +60,28 @@ public abstract class NamedIndividualFrame implements EntityFrame<OWLNamedIndivi
     public abstract ImmutableSet<OWLNamedIndividualData> getSameIndividuals();
 
     @Override
+    @JsonIgnore
     public ImmutableSet<PropertyAnnotationValue> getAnnotationPropertyValues() {
         return getPropertyValueList().getAnnotationPropertyValues();
     }
 
     @Nonnull
     @Override
+    @JsonIgnore
     public ImmutableList<PropertyValue> getLogicalPropertyValues() {
         return getPropertyValueList().getLogicalPropertyValues();
     }
 
     @Nonnull
     @Override
+    @JsonIgnore
     public PropertyValueList getPropertyValueList() {
         return new PropertyValueList(getPropertyValues());
     }
 
     @Nonnull
     @Override
+    @JsonIgnore
     public PlainNamedIndividualFrame toPlainFrame() {
         return PlainNamedIndividualFrame.get(
                 getSubject().getEntity(),
