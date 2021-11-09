@@ -3,7 +3,12 @@ package edu.stanford.protege.webprotege.frame;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.auto.value.AutoValue;
+import edu.stanford.protege.webprotege.jackson.OWLAnnotationValueDeserializationConverter;
+import edu.stanford.protege.webprotege.jackson.OWLAnnotationValueProxy;
+import edu.stanford.protege.webprotege.jackson.OWLAnnotationValueSerializationConverter;
 import org.semanticweb.owlapi.model.OWLAnnotationProperty;
 import org.semanticweb.owlapi.model.OWLAnnotationValue;
 
@@ -15,7 +20,6 @@ import javax.annotation.Nonnull;
  * 2020-03-31
  */
 @AutoValue
-
 @JsonTypeName(PlainPropertyAnnotationValue.PROPERTY_ANNOTATION_VALUE)
 public abstract class PlainPropertyAnnotationValue extends PlainPropertyValue {
 
@@ -30,17 +34,28 @@ public abstract class PlainPropertyAnnotationValue extends PlainPropertyValue {
                                                           state);
     }
 
-    @JsonCreator
     @Nonnull
     public static PlainPropertyAnnotationValue get(@Nonnull @JsonProperty(PROPERTY) OWLAnnotationProperty property,
                                                    @Nonnull @JsonProperty(VALUE) OWLAnnotationValue annotationValue) {
         return get(property, annotationValue, State.ASSERTED);
     }
 
+
+    @JsonCreator
+    @Nonnull
+    public static PlainPropertyAnnotationValue get(@Nonnull @JsonProperty(PROPERTY) OWLAnnotationProperty property,
+                                                   @Nonnull @JsonProperty(VALUE) OWLAnnotationValueProxy annotationValueProxy) {
+
+        return get(property, annotationValueProxy.toAnnotationValue(), State.ASSERTED);
+    }
+
     @Nonnull
     @Override
     public abstract OWLAnnotationProperty getProperty();
 
+
+    @JsonSerialize(converter = OWLAnnotationValueSerializationConverter.class)
+    @JsonDeserialize(converter = OWLAnnotationValueDeserializationConverter.class)
     @Nonnull
     @Override
     public abstract OWLAnnotationValue getValue();

@@ -4,10 +4,14 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.auto.value.AutoValue;
 import edu.stanford.protege.webprotege.entity.OWLAnnotationPropertyData;
 import edu.stanford.protege.webprotege.entity.OWLEntityData;
 import edu.stanford.protege.webprotege.entity.OWLPrimitiveData;
+import edu.stanford.protege.webprotege.jackson.OWLAnnotationValueDeserializationConverter;
+import edu.stanford.protege.webprotege.jackson.OWLAnnotationValueSerializationConverter;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;

@@ -4,6 +4,7 @@ package edu.stanford.protege.webprotege.frame;
 import edu.stanford.protege.webprotege.jackson.WebProtegeJacksonApplication;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.semanticweb.owlapi.model.OWLLiteral;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
@@ -19,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PropertyAnnotationValue_Serialization_TestCase {
 
     @Autowired
-    private JacksonTester<PlainPropertyValue> tester;
+    private JacksonTester<PlainPropertyAnnotationValue> tester;
 
     private PlainPropertyAnnotationValue propertyValue;
 
@@ -30,10 +31,31 @@ public class PropertyAnnotationValue_Serialization_TestCase {
     }
 
     @Test
-    public void shouldSerializeAndDeserializePropertyValue() throws IOException {
+    public void shouldSerializePropertyValue() throws IOException {
         var json = tester.write(propertyValue);
+        System.out.println(json.getJson());
         assertThat(json).hasJsonPathValue("property");
         assertThat(json).hasJsonPathValue("value");
+    }
+
+    @Test
+    void shouldDeserializePropertyValue() throws IOException {
+        var json = """
+                {
+                    "@type"    : "PropertyAnnotationValue",
+                    "property" : {
+                        "@type":"AnnotationProperty",
+                        "iri":"http://example.org/p"
+                    },
+                    "value"    : {
+                        "value" : "Hello"
+                    }
+                }
+                """;
+        var parsed = tester.parse(json);
+        var pv = parsed.getObject();
+        assertThat(pv.getProperty().getIRI().toString()).isEqualTo("http://example.org/p");
+        assertThat(pv.getValue()).isInstanceOfAny(OWLLiteral.class);
 
     }
 }
