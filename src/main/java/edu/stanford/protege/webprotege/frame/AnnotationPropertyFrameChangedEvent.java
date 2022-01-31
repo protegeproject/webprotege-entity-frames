@@ -11,7 +11,7 @@ import org.semanticweb.owlapi.model.OWLAnnotationProperty;
  * Bio-Medical Informatics Research Group<br>
  * Date: 18/12/2012
  */
-@JsonTypeName("AnnotationPropertyFrameChangedEvent")
+@JsonTypeName("webprotege.frames.events.AnnotationPropertyFrameChanged")
 public record AnnotationPropertyFrameChangedEvent(ProjectId projectId,
                                                   UserId userId,
                                                   OWLAnnotationProperty entity) implements EntityFrameChangedEvent<OWLAnnotationProperty> {

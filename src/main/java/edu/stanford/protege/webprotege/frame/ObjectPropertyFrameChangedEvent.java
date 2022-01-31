@@ -12,7 +12,7 @@ import org.semanticweb.owlapi.model.OWLObjectProperty;
  * Bio-Medical Informatics Research Group<br>
  * Date: 18/12/2012
  */
-@JsonTypeName("ObjectPropertyFrameChangedEvent")
+@JsonTypeName("webprotege.frames.events.ObjectPropertyFrameChanged")
 public record ObjectPropertyFrameChangedEvent(ProjectId projectId,
                                               UserId userId,
                                               OWLObjectProperty entity) implements EntityFrameChangedEvent<OWLObjectProperty> {

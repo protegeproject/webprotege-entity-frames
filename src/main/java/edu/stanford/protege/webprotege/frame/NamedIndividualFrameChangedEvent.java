@@ -12,7 +12,7 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
  * Bio-Medical Informatics Research Group<br>
  * Date: 18/12/2012
  */
-@JsonTypeName("NamedIndividualFrameChangedEvent")
+@JsonTypeName("webprotege.frames.events.NamedIndividualFrameChanged")
 public record NamedIndividualFrameChangedEvent(ProjectId projectId,
                                                UserId userId,
                                                OWLNamedIndividual entity) implements EntityFrameChangedEvent<OWLNamedIndividual> {
