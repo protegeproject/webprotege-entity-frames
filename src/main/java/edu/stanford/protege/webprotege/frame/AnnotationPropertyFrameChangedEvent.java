@@ -11,12 +11,12 @@ import org.semanticweb.owlapi.model.OWLAnnotationProperty;
  * Bio-Medical Informatics Research Group<br>
  * Date: 18/12/2012
  */
-@JsonTypeName("webprotege.frames.events.AnnotationPropertyFrameChanged")
+@JsonTypeName("webprotege.events.frames.AnnotationPropertyFrameChanged")
 public record AnnotationPropertyFrameChangedEvent(ProjectId projectId,
                                                   UserId userId,
                                                   OWLAnnotationProperty entity) implements EntityFrameChangedEvent<OWLAnnotationProperty> {
 
-    public static final String CHANNEL = "webprotege.frames.events.AnnotationPropertyFrameChanged";
+    public static final String CHANNEL = "webprotege.events.frames.AnnotationPropertyFrameChanged";
 
     @Override
     public String getChannel() {

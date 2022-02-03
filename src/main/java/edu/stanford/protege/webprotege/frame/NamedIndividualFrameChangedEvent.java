@@ -12,12 +12,12 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
  * Bio-Medical Informatics Research Group<br>
  * Date: 18/12/2012
  */
-@JsonTypeName("webprotege.frames.events.NamedIndividualFrameChanged")
+@JsonTypeName("webprotege.events.frames.NamedIndividualFrameChanged")
 public record NamedIndividualFrameChangedEvent(ProjectId projectId,
                                                UserId userId,
                                                OWLNamedIndividual entity) implements EntityFrameChangedEvent<OWLNamedIndividual> {
 
-    public static final String CHANNEL = "webprotege.frames.events.NamedIndividualFrameChanged";
+    public static final String CHANNEL = "webprotege.events.frames.NamedIndividualFrameChanged";
 
     @Override
     public String getChannel() {
