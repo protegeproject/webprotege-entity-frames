@@ -1,6 +1,7 @@
 package edu.stanford.protege.webprotege.frame;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import edu.stanford.protege.webprotege.common.EventId;
 import edu.stanford.protege.webprotege.common.ProjectId;
 import edu.stanford.protege.webprotege.common.UserId;
 import org.semanticweb.owlapi.model.OWLAnnotationProperty;
@@ -12,7 +13,8 @@ import org.semanticweb.owlapi.model.OWLAnnotationProperty;
  * Date: 18/12/2012
  */
 @JsonTypeName("webprotege.events.frames.AnnotationPropertyFrameChanged")
-public record AnnotationPropertyFrameChangedEvent(ProjectId projectId,
+public record AnnotationPropertyFrameChangedEvent(EventId eventId,
+                                                  ProjectId projectId,
                                                   UserId userId,
                                                   OWLAnnotationProperty entity) implements EntityFrameChangedEvent<OWLAnnotationProperty> {
 
