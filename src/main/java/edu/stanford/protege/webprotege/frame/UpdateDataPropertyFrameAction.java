@@ -2,9 +2,7 @@ package edu.stanford.protege.webprotege.frame;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import edu.stanford.protege.webprotege.common.ProjectId;
-import edu.stanford.protege.webprotege.common.ProjectRequest;
-import edu.stanford.protege.webprotege.common.Request;
+import edu.stanford.protege.webprotege.common.*;
 
 /**
  * Author: Matthew Horridge<br>
@@ -15,9 +13,10 @@ import edu.stanford.protege.webprotege.common.Request;
 
 
 @JsonTypeName("webprotege.frames.UpdateDataPropertyFrame")
-public record UpdateDataPropertyFrameAction(@JsonProperty("projectId") ProjectId projectId,
+public record UpdateDataPropertyFrameAction(@JsonProperty("changeRequestId") ChangeRequestId changeRequestId,
+                                            @JsonProperty("projectId") ProjectId projectId,
                                             @JsonProperty("from") PlainDataPropertyFrame from,
-                                            @JsonProperty("to") PlainDataPropertyFrame to) implements ProjectRequest<UpdateDataPropertyFrameResult>, UpdateFrame {
+                                            @JsonProperty("to") PlainDataPropertyFrame to) implements ProjectRequest<UpdateDataPropertyFrameResult>, UpdateFrame, ContentChangeRequest {
 
     public static final String CHANNEL = "webprotege.frames.UpdateDataPropertyFrame";
 

@@ -1,5 +1,6 @@
 package edu.stanford.protege.webprotege.frame;
 
+import edu.stanford.protege.webprotege.common.ChangeRequestId;
 import org.semanticweb.owlapi.model.OWLEntity;
 
 /**
@@ -8,6 +9,8 @@ import org.semanticweb.owlapi.model.OWLEntity;
  * 2021-08-31
  */
 public interface UpdateFrame {
+
+    ChangeRequestId changeRequestId();
 
     PlainEntityFrame from();
 

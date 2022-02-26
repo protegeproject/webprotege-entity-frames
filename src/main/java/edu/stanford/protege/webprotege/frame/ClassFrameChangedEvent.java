@@ -2,9 +2,7 @@ package edu.stanford.protege.webprotege.frame;
 
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import edu.stanford.protege.webprotege.common.EventId;
-import edu.stanford.protege.webprotege.common.ProjectId;
-import edu.stanford.protege.webprotege.common.UserId;
+import edu.stanford.protege.webprotege.common.*;
 import org.semanticweb.owlapi.model.OWLClass;
 
 /**
@@ -15,9 +13,10 @@ import org.semanticweb.owlapi.model.OWLClass;
  */
 @JsonTypeName("webprotege.events.frames.ClassFrameChanged")
 public record ClassFrameChangedEvent(EventId eventId,
+                                     ChangeRequestId changeRequestId,
                                      ProjectId projectId,
                                      UserId userId,
-                                     OWLClass entity) implements EntityFrameChangedEvent<OWLClass> {
+                                     OWLClass entity) implements EntityFrameChangedEvent<OWLClass>, ContentChangeRequestEvent {
 
     public static final String CHANNEL = "webprotege.events.frames.ClassFrameChanged";
 
