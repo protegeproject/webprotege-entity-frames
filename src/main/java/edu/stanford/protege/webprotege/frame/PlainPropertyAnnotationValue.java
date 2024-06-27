@@ -35,13 +35,13 @@ public abstract class PlainPropertyAnnotationValue extends PlainPropertyValue {
     }
 
     @Nonnull
+    @JsonCreator
     public static PlainPropertyAnnotationValue get(@Nonnull @JsonProperty(PROPERTY) OWLAnnotationProperty property,
                                                    @Nonnull @JsonProperty(VALUE) OWLAnnotationValue annotationValue) {
         return get(property, annotationValue, State.ASSERTED);
     }
 
 
-    @JsonCreator
     @Nonnull
     public static PlainPropertyAnnotationValue get(@Nonnull @JsonProperty(PROPERTY) OWLAnnotationProperty property,
                                                    @Nonnull @JsonProperty(VALUE) OWLAnnotationValueProxy annotationValueProxy) {
